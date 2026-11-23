@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "crawl4ai": {
+      "type": "stdio",
+      "command": "bash",
+      "args": ["crawl4ai-mcp/run.sh"],
+      "env": {}
+    }
+  }
+}
