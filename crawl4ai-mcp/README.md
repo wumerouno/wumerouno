@@ -38,13 +38,24 @@ claude mcp add crawl4ai --scope user -- bash /absolute/path/to/crawl4ai-mcp/run.
 
 ## 2. Claude Desktop chat (local, no hosting)
 
-Clone this repo, run `bash crawl4ai-mcp/setup.sh`, then add this to
-`claude_desktop_config.json` (Claude Desktop → Settings → Developer → Edit Config)
-and restart the app:
+One command, on macOS, Windows or Linux (needs Python 3.10+). It installs into
+`~/.crawl4ai-mcp`, downloads Chromium, and adds `crawl4ai` to Claude Desktop's config
+(your existing servers are kept, and a `.bak` backup is written).
 
-```json
-{ "mcpServers": { "crawl4ai": { "command": "bash", "args": ["/absolute/path/to/crawl4ai-mcp/run.sh"] } } }
+macOS / Linux:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wumerouno/wumerouno/claude/busy-goodall-whwn6e/crawl4ai-mcp/install_desktop.py -o install_desktop.py && python3 install_desktop.py
 ```
+
+Windows (PowerShell):
+
+```powershell
+irm https://raw.githubusercontent.com/wumerouno/wumerouno/claude/busy-goodall-whwn6e/crawl4ai-mcp/install_desktop.py -OutFile install_desktop.py; py install_desktop.py
+```
+
+Then quit Claude Desktop completely and reopen it. To remove it later:
+`python3 install_desktop.py --uninstall`.
 
 ## 3. claude.ai chat everywhere (remote connector)
 
